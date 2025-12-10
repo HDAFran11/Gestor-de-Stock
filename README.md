@@ -1,33 +1,51 @@
-# Sistema Gestor de Stock para Kiosco - Versiones y Ejecutables
+# 📦 Gestor de Stock
 
-Este repositorio contiene las diferentes versiones del desarrollo del **Sistema Gestor de Stock para un Kiosco**. El proyecto ha evolucionado a lo largo del tiempo, y cada versión incluye mejoras y nuevas funcionalidades. Además, se proporcionan los ejecutables correspondientes para que puedas probar el sistema sin necesidad de compilar el código.
+Aplicación de escritorio desarrollada en **Java** para la administración eficiente de inventarios y registro de ventas en pequeños comercios. El sistema permite controlar el stock de productos, realizar ventas y generar reportes diarios de actividad.
 
-## Descripción del Proyecto
+## 🚀 Características Principales
 
-El **Sistema Gestor de Stock para Kiosco** es una aplicación de escritorio en Java que permite gestionar productos y registrar ventas de manera eficiente. A lo largo de las distintas versiones del proyecto, se han añadido características como:
+* **Gestión de Productos:** Alta, baja y modificación de productos con control de stock y precios.
+* **Registro de Ventas:** Procesamiento de ventas calculando totales automáticamente y descontando stock en tiempo real.
+* **Persistencia de Datos:** El sistema guarda automáticamente todo el inventario y el historial de ventas en un archivo binario (`sistemaGestor.dat`), asegurando que no se pierdan datos al cerrar la aplicación.
+* **Reportes Automáticos:** Generación de un archivo de texto (`informeDelDia.txt`) con el resumen de las operaciones diarias para control de caja.
+* **Interfaz Gráfica:** GUI intuitiva (`VentanaPrincipal`) para facilitar la operación sin necesidad de consola.
 
-- Gestión de productos (añadir, eliminar, modificar).
-- Registro de ventas, con la posibilidad de descontar el stock automáticamente.
-- Notificaciones cuando el stock llega a 0 o no es suficiente para una venta.
-- Serialización de datos para evitar la pérdida de información entre sesiones.
+## 🛠️ Tecnologías Utilizadas
 
-## Estructura del Repositorio
+* **Lenguaje:** Java
+* **Interfaz:** Java Swing / AWT (Ventanas y componentes gráficos)
+* **Almacenamiento:** Serialización de objetos (Archivos `.dat`)
 
-Este repositorio está organizado en carpetas, cada una representando una versión diferente del proyecto.
-Cada versión incluye:
+## 📂 Estructura del Proyecto
 
-1. **Código fuente**: El código Java desarrollado para esa versión.
-2. **Ejecutable (.jar)**: Un archivo ejecutable que puedes correr en cualquier entorno que soporte Java, sin necesidad de compilar el código.
+El proyecto ha evolucionado a través de 3 versiones, siendo la **Versión 3** la más estable y completa:
 
-## Requisitos del Sistema
+```text
+GestorDeStock_V3/
+├── bin/                  # Archivos compilados (.class)
+├── src/codigo/           # Código fuente
+│   ├── Producto.java     # Clase entidad Producto
+│   ├── Venta.java        # Clase entidad Venta
+│   ├── SistemaGestor.java# Lógica de negocio (Controlador)
+│   └── VentanaPrincipal.java # Interfaz gráfica de usuario
+├── sistemaGestor.dat     # Base de datos local (Persistencia)
+└── informeDelDia.txt     # Reporte de salida
+```
+## 🔧 Instalación y Ejecución
+Requisitos: Tener instalado Java (JRE/JDK).
 
-- **Java 8** o superior
-- Librerías de Java Swing para la interfaz gráfica (incluidas por defecto en JDK)
+Ejecutar:
 
-## Cómo Ejecutar los Ejecutables
+ * Puedes correr directamente el archivo JAR ejecutable:
 
-Para probar una versión del proyecto:
+```text
+java -jar GestorDeStock_v3.jar
+```
+ * O compilar y correr desde el código fuente (src/codigo/VentanaPrincipal.java).
 
-1. Descarga el archivo `.jar` correspondiente desde la carpeta de la versión deseada.
-2. Abre una terminal o línea de comandos y ejecuta el archivo `.jar` con el siguiente comando:
-   "java -jar nombre-del-archivo.jar"
+## 📄 Notas de Versión
+* Versión 1: Prototipo inicial con consola.
+
+* Versión 2: Mejoras en la estructura de clases.
+
+* Versión 3: Implementación completa de GUI, persistencia robusta y generación de informes.
